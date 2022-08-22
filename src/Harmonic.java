@@ -1,19 +1,15 @@
 import java.util.Scanner;
+
 public class Harmonic {
     public static void main(String[] args) {
-        double result = 0, i;
-
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number");
-        int num = sc.nextInt();
+        System.out.println("Enter the number: ");
+        int a = sc.nextInt();
 
-        System.out.println("The Harmonic Value for the number " + num);
-        for (i = 1; i <= num; i++) {
-            result = (1 / i);
-            System.out.println(result);
-
-            sc.close();
+        double result = 0.0;
+        for (int i = 1; i <=a; i++) {
+            result = result + (double) 1 / i;
         }
+        System.out.println("Harmonic number of " + a + " is " + result);
     }
 }
-
