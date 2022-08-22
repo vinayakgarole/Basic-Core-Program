@@ -1,24 +1,37 @@
+import java.util.Scanner;
 public class FlipCoin {
     public static void main(String[] args) {
+        int heads=0;
+        int tails=0;
+        int count=1;
+        double r=0.0;
 
-        int n = 0, h_cnt = 0, t_cnt = 0;
-        double heads, tails;
+        System.out.println("Enter the total number of flips:-");
+        Scanner n=new Scanner(System.in);
+        int flips=n.nextInt();
 
-        System.out.print("enter no. of times you want to flip the coin: ");
+        while(count<=flips){
+            r=Math.random();
+            System.out.println(count +" "+r);
+            if (r<0.5){
+                heads++;
+                System.out.println("HEADS");
 
-        for (int i = 0; i < n; i++) {
-            double random = Math.random();
-            if (random < 0.5)
-                t_cnt++;
-            else
-                h_cnt++;
+            }
+            else{
+                tails++;
+                System.out.println("TAILS");
+            }
+            count++;
         }
+        System.out.println("Number of HEADS:" +heads);
+        System.out.println("Number of TAILS:" +tails);
 
-        heads = h_cnt / (double) n * 100;
-        tails = t_cnt / (double) n * 100;
-        System.out.println("Percentage of heads");
-        System.out.println("Percentage of tails");
+        double headpercent = (double) heads/flips*100;
+        double tailpercent =(double) tails/flips*100;
 
+        System.out.println("percentage of heads:" +headpercent);
+        System.out.println("percentage of tails:" +tailpercent);
     }
 
 }
